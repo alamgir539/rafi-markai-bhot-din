@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rafi & Class 6-7 Celebration</title>
+<style>
+  :root {
+    --bg: #f7f7fb;
+    --card: #ffffff;
+    --accent: #4b6cff;
+  }
+  body {
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial;
+    margin: 0;
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+    color: #222;
+  }
+  .wrap {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 2rem 3rem;
+    background: var(--card);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    text-align: center;
+  }
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #4b6cff;
+  }
+  p {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+  }
+  .meta {
+    color: #555;
+    font-size: 0.9rem;
+  }
+  .slogan strong, .highlight {
+    display: block;
+    margin: 1rem 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-align: center;
+    background: linear-gradient(90deg, #ff3b3b, #ff8c00, #ffd700, #00c851, #007bff, #8a2be2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400% 100%;
+    animation: rainbow 6s linear infinite;
+  }
+  .slogan strong:nth-child(1) { animation-delay: 0s; }
+  .slogan strong:nth-child(2) { animation-delay: 1s; }
+  .slogan strong:nth-child(3) { animation-delay: 2s; }
+  .highlight:nth-child(1) { animation-delay: 0s; }
+  .highlight:nth-child(2) { animation-delay: 1s; }
+  .highlight:nth-child(3) { animation-delay: 2s; }
+  @keyframes rainbow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 0.9rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    background: var(--accent);
+    color: #fff;
+  }
+  .footer {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #555;
+  }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <h1>Rafi markai bhot dinn & Goodbye Class 6!</h1>
+  <p class="meta">A colorful celebration page combining slogans and farewell messages.</p>
+  
+  <div class="slogan">
+    <strong>ek boro naki dui boro? rafi bhai er mon boro.</strong>
+    <strong>udayan e kono marka ace? Ace!!!!!!!!!!! kon se marka? rafi marka.</strong>
+    <strong>aro jore !!!!!! rafi maRka!!!!!!!!</strong>
+  </div>
+
+  <div>
+    <p class="highlight">📘💐 বিদায় শ্রদ্ধা ও ভালোবাসায় 💐📘</p>
+    <p>❤️ Goodbye Class 6 ❤️</p>
+    <p>Every memory will stay in my heart forever 💕</p>
+    <p>Thank you for all the laughter, love & lessons.</p>
+    <p>Welcome Class 7 — new chapter begins! ✨</p>
+
+    <p class="highlight">🔥 শ্রদ্ধা নিবেদন ও জুন 💫</p>
+    <p>✔️ Class 6 Completed!</p>
+    <p>💭 Memories Loaded!</p>
+    <p>📈 Level Up — Class 7, Here I Come!</p>
+    <p>#NewVibes #NextLevel #AdrikeMovesOn</p>
+
+    <p class="highlight">🌈 শ্রদ্ধা নিবেদন ও ভালোবাসা নিবেদন 🌈</p>
+    <p>❤️ Goodbye Class 6 — you’ll always be special!</p>
+    <p>💌 Thanks for the unforgettable moments 💫</p>
+    <p>🌞 Now it’s time to rise higher & shine brighter!</p>
+    <p>✨ Hello Class 7 — let’s make new memories!</p>
+  </div>
+
+  <div style="text-align:center">
+    <a class="btn" href="#" onclick="alert('This is a demo button — replace with a real link.');return false;">Demo button</a>
+  </div>
+
+  <footer class="footer">
+    &copy; <span id="year"></span> Rafi markai & Labid Tahmid Adrike. All rights reserved.
+  </footer>
+</main>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
