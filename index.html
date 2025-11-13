@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
     --accent: #4b6cff;
   }
   body {
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial;
+    font-family: "Noto Sans Bengali", system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial;
     margin: 0;
     background: linear-gradient(135deg, #ffecd2, #fcb69f);
     color: #222;
@@ -50,12 +50,6 @@
     background-size: 400% 100%;
     animation: rainbow 6s linear infinite;
   }
-  .slogan strong:nth-child(1) { animation-delay: 0s; }
-  .slogan strong:nth-child(2) { animation-delay: 1s; }
-  .slogan strong:nth-child(3) { animation-delay: 2s; }
-  .highlight:nth-child(1) { animation-delay: 0s; }
-  .highlight:nth-child(2) { animation-delay: 1s; }
-  .highlight:nth-child(3) { animation-delay: 2s; }
   @keyframes rainbow {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -64,13 +58,53 @@
   .btn {
     display: inline-block;
     margin-top: 1rem;
-    padding: 0.5rem 0.9rem;
+    padding: 0.6rem 1.2rem;
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
     background: var(--accent);
     color: #fff;
+    font-size: 1.1rem;
+    transition: 0.3s;
   }
+  .btn:hover {
+    background: #3c55ff;
+    transform: scale(1.05);
+  }
+
+  /* Lyrics Section */
+  #lyrics {
+    display: none;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: rgba(255,255,255,0.97);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.9;
+    white-space: pre-wrap;
+    max-width: 600px;
+    animation: fadeIn 1s ease-in-out;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(90deg, #ff0000, #ff8c00, #ffff00, #00ff00, #00c3ff, #8a2be2, #ff1493);
+    background-size: 600% 100%;
+    animation: gradientShift 5s linear infinite, fadeIn 1.2s ease-in-out;
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(30px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
   .footer {
     margin-top: 1.5rem;
     font-size: 0.9rem;
@@ -110,7 +144,21 @@
   </div>
 
   <div style="text-align:center">
-    <a class="btn" href="#" onclick="alert('This is a demo button — replace with a real link.');return false;">Demo button</a>
+    <button class="btn" id="songBtn">🎵 Song</button>
+  </div>
+
+  <div id="lyrics">
+চাই না মেয়ে তুমি অন্য কারো হও  
+পাবে না কেউ তোমাকে, তুমি কারো নও  
+চাই না মেয়ে তুমি অন্য কারো হও  
+পাবে না কেউ তোমাকে, তুমি কারো নও  
+তুমি তো আমার-ই, জানো না হো-ও-ওও  
+এ হৃদয় তোমার-ই  
+ও-হো-ওও  
+তোমাকে ছাড়া আমি, বুঝি না কোনো কিছু যে আর  
+পৃথিবী জেনে যাক, তুমি শুধু আমার  
+তোমাকে ছাড়া আমি, বুঝি না কোনো কিছু যে আর  
+পৃথিবী জেনে যাক, তুমি শুধু আমার
   </div>
 
   <footer class="footer">
@@ -120,6 +168,15 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  const btn = document.getElementById('songBtn');
+  const lyrics = document.getElementById('lyrics');
+  let show = false;
+  btn.addEventListener('click', () => {
+    show = !show;
+    lyrics.style.display = show ? 'block' : 'none';
+    btn.textContent = show ? '🎶 Hide Lyrics' : '🎵 Song';
+  });
 </script>
 </body>
 </html>
